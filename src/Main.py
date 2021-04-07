@@ -2,5 +2,6 @@ from Task import Task
 
 tasko = Task("Hello")
 print(tasko.name)
-tasko.check
-print(tasko.is_checked)
+tasko.set_check()
+print(tasko.is_checked())
+
