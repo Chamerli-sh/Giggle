@@ -1,15 +1,7 @@
 from Task import Task
 
-tasko = Task("Hello")
-print(tasko.name)
-tasko.set_check()
-print(tasko.is_checked())
-
-
-
 tasklist = []
 
-tasklist.append(tasko)
 def check_list(flags):
     match flags:
         case "-h":
