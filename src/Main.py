@@ -18,11 +18,19 @@ def line_return():
     inp = input()
     check_command(inp)
 
+def add_task():
+    name = input("Enter the task name: ")
+    tasklist.append(Task(name))
+
 def check_command(inputs):
     match inputs.split()[0]:
         case 'l':
             check_list()
             line_return()
+        case 'a':
+            add_task()
+            line_return()
+
         case 'q':
             exit()
 
