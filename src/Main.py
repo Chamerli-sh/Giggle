@@ -11,8 +11,10 @@ tasklist = []
 
 tasklist.append(tasko)
 def check_list():
+    i = 0
     for task in tasklist:
-        print("`" + task.name + "`", str(task.is_checked()))
+        print(i, "`" + task.name + "`", str(task.is_checked()))
+        i += 1
 
 def line_return():
     inp = input()
@@ -30,7 +32,6 @@ def check_command(inputs):
         case 'a':
             add_task()
             line_return()
-
         case 'q':
             exit()
 
