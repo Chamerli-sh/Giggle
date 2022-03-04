@@ -25,7 +25,17 @@ def add_task():
     tasklist.append(Task(name))
 
 def switch_task(flags):
-    tasklist[int(flags)].set_check(not tasklist[int(flags)].is_checked())
+    if isinstance(flags, str):
+        if flags == 's':
+            channel = int(input("Please Enter the Index of the task that ou would like to swtich state: "))
+        else: print("Are you joking with me, this is not a number at all")
+    
+    elif isinstance(flags, int):
+        channel = int(flags)
+    else:
+        print("Crazy Boy")
+    
+    tasklist[channel].set_check(not tasklist[channel].is_checked())
 
 def check_command(inputs):
     flags = inputs.split().pop()
@@ -45,6 +55,6 @@ def check_command(inputs):
         case 'q':
             exit()
         case _:
-            print("This command is not valide, please retry:")
+            print("This command is not valide, please retry ('q' to quit):")
             line_return()
 line_return()
