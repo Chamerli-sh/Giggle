@@ -25,6 +25,9 @@ def line_return():
     inp = input()
     check_command(inp)
 
+def remove_task(flags):
+    tasklist.pop(int(flags))
+
 def add_task():
     name = input("Enter the task name: ")
     tasklist.append(Task(name))
@@ -37,6 +40,9 @@ def check_command(inputs):
             line_return()
         case 'a':
             add_task()
+            line_return()
+        case 'k':
+            remove_task(flags)
             line_return()
         case 'q':
             exit()
