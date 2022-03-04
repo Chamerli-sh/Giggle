@@ -10,11 +10,16 @@ print(tasko.is_checked())
 tasklist = []
 
 tasklist.append(tasko)
-def check_list():
-    i = 0
-    for task in tasklist:
-        print(i, "`" + task.name + "`", str(task.is_checked()))
-        i += 1
+def check_list(flags):
+    match flags:
+        case "-h":
+            for task in tasklist:
+                print("`" + task.name + "`", str(task.is_checked()))
+        case _:
+            i = 0
+            for task in tasklist:
+                print(i, "`" + task.name + "`", str(task.is_checked()))
+                i += 1
 
 def line_return():
     inp = input()
@@ -25,14 +30,17 @@ def add_task():
     tasklist.append(Task(name))
 
 def check_command(inputs):
+    flags = inputs.split().pop()
     match inputs.split()[0]:
         case 'l':
-            check_list()
+            check_list(flags)
             line_return()
         case 'a':
             add_task()
             line_return()
         case 'q':
             exit()
-
+        case _:
+            print("This command is not valide, please retry:")
+            line_return()
 line_return()
