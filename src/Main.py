@@ -32,6 +32,9 @@ def add_task():
     name = input("Enter the task name: ")
     tasklist.append(Task(name))
 
+def switch_task(flags):
+    tasklist[int(flags).check = not check]
+
 def check_command(inputs):
     flags = inputs.split().pop()
     match inputs.split()[0]:
@@ -44,6 +47,8 @@ def check_command(inputs):
         case 'k':
             remove_task(flags)
             line_return()
+        case 's':
+            switch_task(flags)
         case 'q':
             exit()
         case _:
