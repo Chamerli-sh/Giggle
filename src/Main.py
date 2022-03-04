@@ -33,7 +33,7 @@ def add_task():
     tasklist.append(Task(name))
 
 def switch_task(flags):
-    tasklist[int(flags).check = not check]
+    tasklist[int(flags)].set_check(not tasklist[int(flags)].is_checked())
 
 def check_command(inputs):
     flags = inputs.split().pop()
@@ -49,6 +49,7 @@ def check_command(inputs):
             line_return()
         case 's':
             switch_task(flags)
+            line_return()
         case 'q':
             exit()
         case _:
