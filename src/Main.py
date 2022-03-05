@@ -65,7 +65,7 @@ def check_command(inputs):
             os.system('clear')
             line_return()
         case 'q':
-            print(Fore.RED + "Goodbye Moonman")
+            print('\n' + Fore.RED + "Goodbye Moonman...")
             exit()
         case _:
             print("This command is not valide, please retry ('q' to quit):")
