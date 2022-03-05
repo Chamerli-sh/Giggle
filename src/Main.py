@@ -24,7 +24,7 @@ def remove_task(flags):
 
 def add_task(flags):
     if flags  == 'a':
-        name = input(Fore.GREEN + "Enter the task name: " + Fore.WHITE)
+        name = input(Fore.GREEN + "Enter the task's name: " + Fore.WHITE)
     else: name = flags
     tasklist.append(Task(name))
 
@@ -65,7 +65,7 @@ def check_command(inputs):
             os.system('clear')
             line_return()
         case 'q':
-            print('\n' + Fore.RED + "Goodbye Moonman...")
+            print('\n' + Fore.RED + "Goodbye Moonman 👋...")
             exit()
         case _:
             print(Fore.YELLOW + "This command is not valide, please retry ('q' to quit):")
