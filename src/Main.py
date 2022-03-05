@@ -1,5 +1,5 @@
 from Task import Task
-import os
+from os import system
 from colorama import Fore
 
 tasklist = []
@@ -62,7 +62,10 @@ def check_command(inputs):
             switch_task(flags)
             line_return()
         case 'c':
-            os.system('clear')
+            system('clear')
+            line_return()
+        case 'h':
+            print(Fore.MAGENTA + "Commands List: \n 'l': Display tasks list \n 'a': Create a task \n 'k': Remove a task \n 's': Switch the state of a task \n 'c': Clear \n 'q': Quit")
             line_return()
         case 'q':
             print('\n' + Fore.RED + "Goodbye Moonman 👋...")
