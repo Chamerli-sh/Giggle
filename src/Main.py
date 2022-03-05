@@ -8,11 +8,11 @@ def check_list(flags):
     match flags:
         case "-h":
             for task in tasklist:
-                print(Fore.BLUE + "`" + task.name + "`", str(task.is_checked()))
+                print(Fore.BLUE + "`" + task.name + "`", str(task.str_check()))
         case _:
             i = 0
             for task in tasklist:
-                print(Fore.BLUE + str(i), "`" + task.name + "`", str(task.is_checked()))
+                print(Fore.BLUE + str(i), "`" + task.name + "`", str(task.str_check()))
                 i += 1
 
 def line_return():

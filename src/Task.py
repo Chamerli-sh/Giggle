@@ -9,3 +9,10 @@ class Task():
     
     def is_checked(self):
         return Task.check
+
+    def str_check(self):
+        match self.check:
+            case True:
+                return '✅'
+            case False:
+                return '❌'
