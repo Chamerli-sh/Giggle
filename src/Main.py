@@ -68,6 +68,6 @@ def check_command(inputs):
             print('\n' + Fore.RED + "Goodbye Moonman 👋...")
             exit()
         case _:
-            print(Fore.YELLOW + "This command is not valide, please retry ('q' to quit):")
+            print(Fore.YELLOW + "This command is not valide, please try another one ('h' for help).")
             line_return()
 line_return()
