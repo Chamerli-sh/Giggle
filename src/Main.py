@@ -7,12 +7,14 @@ tasklist = []
 def check_list(flags):
     match flags:
         case "-h":
+            print(Fore.BLUE + "Name:    State:")
             for task in tasklist:
-                print(Fore.BLUE + "`" + task.name + "`", str(task.str_check()))
+                print(Fore.BLUE + "`" + task.name + "`" + "    " + str(task.str_check()))
         case _:
+            print(Fore.BLUE + "Index:    Name:    State:")
             i = 0
             for task in tasklist:
-                print(Fore.BLUE + str(i), "`" + task.name + "`", str(task.str_check()))
+                print(Fore.BLUE + "  " + str(i) + "      " + "`" + task.name + "`" + "      " + str(task.str_check()))
                 i += 1
 
 def line_return():
