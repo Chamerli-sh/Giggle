@@ -1,5 +1,6 @@
 from Task import Task
 import os
+from colorama import Fore
 
 tasklist = []
 
@@ -64,6 +65,7 @@ def check_command(inputs):
             os.system('clear')
             line_return()
         case 'q':
+            print(Fore.RED + "Goodbye Moon man")
             exit()
         case _:
             print("This command is not valide, please retry ('q' to quit):")
