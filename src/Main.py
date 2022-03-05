@@ -42,7 +42,8 @@ def switch_task(flags):
 
     try:
         channel = int(flags)
-        tasklist[channel].set_check(not tasklist[channel].is_checked())  
+        tasklist[channel].set_check(not tasklist[channel].is_checked())
+        print(Fore.GREEN + "The task is now", tasklist[channel].str_check())  
     except:
         print(Fore.RED + "An Error has benn detected, \n " + Fore.YELLOW + "1) Maybe You didn't type a number, \n 2) Maybe the Index you used don't exists (use the command 'l' to show the tasks and their indexs, \n 3) Or maybe it's just the bad code :)")
 
