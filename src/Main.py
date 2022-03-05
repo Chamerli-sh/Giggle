@@ -1,3 +1,4 @@
+from pickle import NONE
 from Task import Task
 
 tasklist = []
@@ -20,22 +21,29 @@ def line_return():
 def remove_task(flags):
     tasklist.pop(int(flags))
 
-def add_task():
-    name = input("Enter the task name: ")
+def add_task(flags):
+    if flags  == 'a':
+        name = input("Enter the task name: ")
+    else: name = flags
     tasklist.append(Task(name))
 
 def switch_task(flags):
-    if isinstance(flags, str):
+    chan = ''
+    if isinstance(flags, str) or isinstance(channel, str):
         if flags == 's':
-            channel = int(input("Please Enter the Index of the task that ou would like to swtich state: "))
+            chan = input("Please Enter the Index of the task that ou would like to swtich state: ")
         else: print("Are you joking with me, this is not a number at all")
     
     elif isinstance(flags, int):
-        channel = int(flags)
+        chan = int(flags)
     else:
-        print("Crazy Boy")
-    
-    tasklist[channel].set_check(not tasklist[channel].is_checked())
+        print("Crazy Boy")  
+
+    try:
+        channel = int(chan)
+        tasklist[channel].set_check(not tasklist[channel].is_checked())  
+    except:
+        print("An Error has benn detected, \n 1) Maybe You didn't type a number, \n 2) Maybe the Index you used don't exists (use the command 'l' to show the tasks and their indexs, \n 3) Or maybe it's just the bad code :)")
 
 def check_command(inputs):
     flags = inputs.split().pop()
@@ -44,7 +52,7 @@ def check_command(inputs):
             check_list(flags)
             line_return()
         case 'a':
-            add_task()
+            add_task(flags)
             line_return()
         case 'k':
             remove_task(flags)
