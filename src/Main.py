@@ -1,4 +1,3 @@
-from pickle import NONE
 from Task import Task
 
 tasklist = []
