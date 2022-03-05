@@ -1,4 +1,5 @@
 from Task import Task
+import os
 
 tasklist = []
 
@@ -58,6 +59,9 @@ def check_command(inputs):
             line_return()
         case 's':
             switch_task(flags)
+            line_return()
+        case 'c':
+            os.system('clear')
             line_return()
         case 'q':
             exit()
